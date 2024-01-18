@@ -5,6 +5,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { PrimengModule } from '../primeng/primeng.module';
 import { RegisterComponent } from './pages/register/register.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     AuthRoutingModule,
     RouterModule,
+    ReactiveFormsModule,
     PrimengModule
   ]
 })

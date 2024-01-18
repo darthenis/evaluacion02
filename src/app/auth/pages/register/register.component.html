@@ -1,18 +1,21 @@
 <div id="container-register" class="flex flex-column align-items-center justify-content-center h-full" style="background-image: url(assets/background.jpg)">
  
-    <form class="flex flex-column align-items-center justify-content-center gap-4 mt-2 surface-100 p-3 border-round shadow-1" [ngStyle]="{maxWidth: '600px'}">
+    <form   class="flex flex-column align-items-center justify-content-center gap-4 mt-2 surface-100 p-3 border-round shadow-1" 
+            [ngStyle]="{maxWidth: '600px'}"
+            [formGroup]="formRegister"
+            (ngSubmit)="onHandleForm()">
         <h2 class="text-center m-0">Crear usuario</h2>
         <div class="flex flex-column sm:flex-row gap-2">
             <div class="flex flex-column gap-2">
                 <span class="p-float-label">
-                    <input pInputText id="Name" type="text" />
+                    <input pInputText id="Name" type="text" formControlName="name"  />
                     <label htmlFor="Name">Nombre</label>
                 </span>
             </div>
     
             <div class="flex gap-2">
                 <span class="p-float-label">
-                    <input pInputText id="Email" type="text" />
+                    <input pInputText id="Email" type="text" formControlName="email" />
                     <label htmlFor="Email">Email</label>
                 </span>
             </div>
@@ -21,21 +24,21 @@
         <div class="flex flex-column sm:flex-row gap-2">
             <div class="flex flex-column gap-2">
                 <span class="p-float-label">
-                    <input pInputText id="Password" type="password" />
+                    <input pInputText id="Password" type="password" formControlName="password" />
                     <label htmlFor="Password">Contraseña</label>
                 </span>
             </div>
     
             <div class="flex flex-column gap-2">
                 <span class="p-float-label">
-                    <input pInputText id="RPassword" type="password"/>
+                    <input pInputText id="RPassword" type="password" formControlName="rpassword"/>
                     <label htmlFor="RPassword">Repetir Contraseña</label>
                 </span>
             </div>
         </div>
         
 
-        <button pButton label="Registrarse" class="w-full mb-0"></button>
+        <button pButton label="Registrarse" type="submit" class="w-full mb-0"></button>
         <p class="m-0">        
             ¿Ya tenés cuenta? <a [routerLink]="['/login']">Ingresar</a>
         </p>
