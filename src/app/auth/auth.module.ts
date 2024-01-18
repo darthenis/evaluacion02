@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AuthRoutingModule } from './auth-routing.module';
 import { PrimengModule } from '../primeng/primeng.module';
 import { RegisterComponent } from './pages/register/register.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { RegisterComponent } from './pages/register/register.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
+    RouterModule,
     PrimengModule
   ]
 })

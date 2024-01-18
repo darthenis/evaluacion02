@@ -7,11 +7,10 @@ import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
+  exports:[
+    ButtonModule,
     InputTextModule,
     PasswordModule,
-    ButtonModule
   ]
 })
 export class PrimengModule { }
