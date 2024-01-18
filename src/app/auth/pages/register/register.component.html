@@ -1,0 +1,62 @@
+<div id="container-register" class="flex flex-column align-items-center justify-content-center h-full" style="background-image: url(assets/background.jpg)">
+ 
+    <form   class="flex flex-column align-items-center justify-content-center gap-4 mt-2 surface-100 p-3 border-round shadow-1" 
+            [ngStyle]="{maxWidth: '600px'}"
+            [formGroup]="formRegister"
+            (ngSubmit)="onHandleForm()">
+        <h2 class="text-center m-0">Crear usuario</h2>
+        <div class="flex flex-column sm:flex-row gap-4 sm:gap-2">
+
+            <div class="flex flex-column gap-2">
+                <span class="p-float-label">
+                    <input pInputText id="Name" type="text" formControlName="name"  />
+                    <label htmlFor="Name">Nombre</label>
+                </span>
+                <small *ngIf="isValidField('name')" class="text-red-400">
+                    *campo requerido
+                </small>
+            </div>
+    
+            <div class="flex flex-column gap-2">
+                <span class="p-float-label">
+                    <input pInputText id="Email" type="text" formControlName="email" />
+                    <label htmlFor="Email">Email</label>
+                </span>
+                <small *ngIf="isValidField('email')" class="text-red-400">
+                    {{ getError('email') === "required" ? '*campo requerido' : 'El email debe ser un formato válido' }}
+                </small>
+            </div>
+        </div>
+      
+        <div class="flex flex-column sm:flex-row gap-4 sm:gap-2">
+            <div class="flex flex-column gap-2">
+                <span class="p-float-label">
+                    <input pInputText id="Password" type="password" formControlName="password" />
+                    <label htmlFor="Password">Contraseña</label>
+                </span>
+                <small *ngIf="isValidField('password')" class="text-red-400" [ngStyle]="{'maxWidth': '220px'}">
+                {{ getError('password') === "required" ? '*campo requerido' : '8 carácteres mínimo y almenos una letra y un número' }}
+                </small>
+            </div>
+    
+            <div class="flex flex-column gap-2">
+                <span class="p-float-label">
+                    <input pInputText id="RPassword" type="password" formControlName="rPassword"/>
+                    <label htmlFor="RPassword">Repetir Contraseña</label>
+                </span>
+                <small *ngIf="isValidField('rPassword')" class="text-red-400">
+                    {{ getError('rPassword') === "required" ? '*campo requerido' : 'Las contraseñas deben coincidir' }}
+                </small>
+            </div>
+        </div>
+        
+
+        <button pButton label="Registrarse" type="submit" class="w-full mb-0"></button>
+        <p class="m-0">        
+            ¿Ya tenés cuenta? <a [routerLink]="['/login']">Ingresar</a>
+        </p>
+
+
+     
+    </form>
+</div>
