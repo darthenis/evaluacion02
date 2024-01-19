@@ -1,0 +1,42 @@
+<div id="container-register" class="flex flex-column align-items-center justify-content-center h-full" style="background-image: url(assets/background.jpg)">
+ 
+    <form   class="flex flex-column align-items-center justify-content-center gap-4 mt-2 surface-100 p-3 border-round shadow-1" 
+            [ngStyle]="{maxWidth: '600px'}"
+           
+          >
+        <h2 class="text-center m-0">Ingresar cuenta</h2>
+    
+            <div class="flex flex-column gap-2">
+                <span class="p-float-label">
+                    <input pInputText id="Email" type="text" />
+                    <label htmlFor="Email">Email</label>
+                </span>
+                <small class="text-red-400">
+                  
+                </small>
+            </div>
+
+            <div class="flex flex-column gap-2">
+                <span class="p-float-label">
+                    <input pInputText id="Password" type="password"  />
+                    <label htmlFor="Password">Contraseña</label>
+                </span>
+                <small  class="text-red-400" [ngStyle]="{'maxWidth': '220px'}">
+
+                </small>
+            </div>
+    
+      
+        <div class="flex flex-column gap-4 w-full">
+
+            <button pButton label="Ingresar" type="submit" class="w-full mb-0"></button>
+            <p class="m-0">        
+                ¿No tenés cuenta? <a [routerLink]="'/auth/register'">Registrarse</a>
+            </p>
+
+        </div>
+
+
+     
+    </form>
+</div>
