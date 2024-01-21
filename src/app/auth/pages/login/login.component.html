@@ -1,6 +1,8 @@
 <div id="container-register" class="flex flex-column align-items-center justify-content-center h-full" style="background-image: url(assets/background.jpg)">
  
-    <form   class="flex flex-column align-items-center justify-content-center gap-4 mt-2 surface-100 p-3 border-round shadow-1" 
+    <form   class="flex flex-column align-items-center justify-content-center gap-4 mt-2 surface-100 p-3 border-round shadow-1"
+            [formGroup]="loginGroup"
+            (ngSubmit)="onHandleForm()" 
             [ngStyle]="{maxWidth: '600px'}"
            
           >
@@ -8,21 +10,21 @@
     
             <div class="flex flex-column gap-2">
                 <span class="p-float-label">
-                    <input pInputText id="Email" type="text" />
+                    <input pInputText id="Email" type="text" formControlName="email"/>
                     <label htmlFor="Email">Email</label>
                 </span>
-                <small class="text-red-400">
-                  
+                <small *ngIf="isValidField('email')" class="text-red-400">
+                  *Campo requerido
                 </small>
             </div>
 
             <div class="flex flex-column gap-2">
                 <span class="p-float-label">
-                    <input pInputText id="Password" type="password"  />
+                    <input pInputText id="Password" type="password" formControlName="password" />
                     <label htmlFor="Password">Contraseña</label>
                 </span>
-                <small  class="text-red-400" [ngStyle]="{'maxWidth': '220px'}">
-
+                <small *ngIf="isValidField('password')"  class="text-red-400" [ngStyle]="{'maxWidth': '220px'}">
+                    *Campo requerido
                 </small>
             </div>
     
