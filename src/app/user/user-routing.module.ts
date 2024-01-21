@@ -6,8 +6,8 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: 'view', component: ViewDataComponent },
-      { path: "**", redirectTo: "view" }
+      { path: '', component: ViewDataComponent },
+      { path: "**", redirectTo: "" }
     ]
   }
 ];
