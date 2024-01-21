@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
+import { PanelModule } from 'primeng/panel';
+
+
 
 
 
@@ -11,6 +14,7 @@ import { ButtonModule } from 'primeng/button';
     ButtonModule,
     InputTextModule,
     PasswordModule,
+    PanelModule
   ]
 })
 export class PrimengModule { }
