@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/shared/services/user.service';
 import { ValidatorsService } from 'src/app/shared/services/validators.service';
 
 @Component({
@@ -22,13 +23,17 @@ export class RegisterComponent {
     
 
   constructor(private fb : FormBuilder,
-              private validatorService : ValidatorsService){}
+              private validatorService : ValidatorsService,
+              private userService : UserService ){}
 
   onHandleForm():void{
     this.formRegister.markAllAsTouched();
     if(this.formRegister.invalid) return;
-    // TODO: add service for sign up
-    console.log(this.formRegister.value)
+    this.userService.registerUser(this.formRegister.value)
+              .subscribe({
+                next: res => alert("logrado"),
+                error: err => alert(err),
+              })
   }
 
   isValidField(field : string):boolean | null{
