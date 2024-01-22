@@ -8,6 +8,7 @@ import { user } from 'src/app/shared/intefaces/user.interface';
 })
 export class ViewDataComponent {
   public user : user = {
+    id : 2,
     name : "Emiliano",
     email : "emi.acevedo.letras@gmail.com",
     password: "asdasd"
